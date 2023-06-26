@@ -20,7 +20,7 @@ class EmployeesAddForm extends Component {
 
     render() {
         
-        const {name, salary} = this.state;
+        const {name, salary, onAdd} = this.state;
         return (
             <div className="app-add-form">
                 <h3>Додайте нового співробітника</h3>
@@ -28,7 +28,7 @@ class EmployeesAddForm extends Component {
                     className="add-form d-flex">
                     <input type="text"
                         className="form-control new-post-label"
-                        placeholder="Как его зовут?"
+                        placeholder="Ім'я"
                         name='name'
                         value={name}
                         onChange={this.onValueChange} />
@@ -41,7 +41,9 @@ class EmployeesAddForm extends Component {
                          
 
                     <button type="submit"
-                        className="btn btn-outline-light">Додати</button>
+                        className="btn btn-outline-light"
+                        onClick={onAdd}
+                        >Додати</button>
                 </form>
             </div>
         )
